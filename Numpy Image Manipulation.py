@@ -5,11 +5,11 @@ from skimage import io
 import matplotlib.pyplot as plt
 
 camaro = io.imread("camaro.jpg")
-# we can see it is just an array filled with numbers
+# We can see it is just an array filled with numbers
 print(camaro)
 
-# can use shape atttribute to look at the structure of our image
-# the output of this is telling us that the image has 1200 rows of pixels, 1600 columns of pixels and is a 3D array
+# Use shape atttribute to look at the structure of our image
+# The output of this is telling us that the image has 1200 rows of pixels, 1600 columns of pixels and is a 3D array
 # 3D array because it is a colour image
 camaro.shape
 
@@ -34,7 +34,7 @@ cropped = camaro[350:1100, 200:1400, :]
 plt.imshow(cropped)
 plt.show()
 
-# We can save this new cropped image iinto our folder 
+# Save this new cropped image into our folder 
 io.imsave("camaro_cropped.jpg", cropped)
 
 # Flip our image using array slicing (uses start:stop:step logic, hence the double colon then -1 to flip)
@@ -51,13 +51,14 @@ io.imsave("camaro_horizontal_flip.jpg", horizontal_flip)
 
 # Colour channels
 
+# Create a zeros array that is the same size and dimention as the image
 red = np.zeros(camaro.shape, dtype = "uint8")
 
-# Now that we have created the zeros array, we now want to fill in the rows and columns with the values for only the red channel and leave the other two channels as zeros
+# Fill in the rows and columns with the values for only the red channel and leave the other two channels as zeros
 red[:,:,0] = camaro[:,:,0]
 plt.imshow(red)
 plt.show()
-# can do the same for green and blue, just need to change the index of the colour channel that we are referring to
+# The same applies for green and blue, just need to change the index of the colour channel that we are referring to
 green = np.zeros(camaro.shape, dtype = "uint8")
 green[:,:,1] = camaro[:,:,1]
 plt.imshow(green)
@@ -68,7 +69,7 @@ blue[:,:,2] = camaro[:,:,2]
 plt.imshow(blue)
 plt.show()
 
-# Lets use stack function to stack these three colour images on top of each other
+# Use stack function to stack these three colour images on top of each other
 camaro_rainbow = np.vstack((red,green,blue))
 plt.imshow(camaro_rainbow)
 plt.show()
