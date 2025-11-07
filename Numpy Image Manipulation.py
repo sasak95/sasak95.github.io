@@ -51,7 +51,7 @@ io.imsave("camaro_horizontal_flip.jpg", horizontal_flip)
 
 # Colour channels
 
-# Create a zeros array that is the same size and dimention as the image
+# Create a zeros array that is the same size and dimension as the image
 red = np.zeros(camaro.shape, dtype = "uint8")
 
 # Fill in the rows and columns with the values for only the red channel and leave the other two channels as zeros
