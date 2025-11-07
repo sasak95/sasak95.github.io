@@ -1,6 +1,6 @@
 
 """
-much quicker to use numpy than loops for calculations with high volumes of data. The calcualtion
+Much quicker to use numpy than loops for calculations with high volumes of data. The calcualtion
 for this task takes a fraction of a second
 """
 
