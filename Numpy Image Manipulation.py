@@ -1,8 +1,3 @@
-"""
-Created on Fri Nov  7 15:21:56 2025
-
-@author: saadak
-"""
 
 import numpy as np
 # import io module from scikit image which enables us to read in an image 
@@ -55,21 +50,14 @@ plt.show()
 io.imsave("camaro_horizontal_flip.jpg", horizontal_flip)
 
 # Colour channels
-"""can capture certain colours by zeroing out the other colours we don't want we can do this 
-by creating an array of zeros that is the same size and dimention as the image and then fill
-the array with the values only for the red colour channel for example with the red values from 
-the image. We also need to ensure the data ype is set as "uint8" as this is just whats used 
-for images in numpy"""
 
 red = np.zeros(camaro.shape, dtype = "uint8")
 
-# Now that we have created the zeros array, we now want to fill in the rows and columns
-# with the values for only the red channel and leave the other two channels as zeros
+# Now that we have created the zeros array, we now want to fill in the rows and columns with the values for only the red channel and leave the other two channels as zeros
 red[:,:,0] = camaro[:,:,0]
 plt.imshow(red)
 plt.show()
-# can do the same for green and blue, just need to change the index of the colour channel that 
-# we are referring to
+# can do the same for green and blue, just need to change the index of the colour channel that we are referring to
 green = np.zeros(camaro.shape, dtype = "uint8")
 green[:,:,1] = camaro[:,:,1]
 plt.imshow(green)
